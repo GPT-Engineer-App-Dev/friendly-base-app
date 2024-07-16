@@ -19,37 +19,54 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
-      <div className="container mx-auto">
-        <Card className="w-full max-w-md mx-auto">
-          <CardHeader>
-            <CardTitle>My Application</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex space-x-2 mb-4">
-              <Input
-                type="text"
-                placeholder="Enter an item"
-                value={inputValue}
-                onChange={handleInputChange}
-              />
-              <Button onClick={handleAddItem}>Add</Button>
-            </div>
-            <ul className="space-y-2">
-              {items.map((item, index) => (
-                <li key={index} className="bg-white p-2 rounded shadow">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-          <CardFooter>
-            <p className="text-sm text-gray-500">
-              Total items: {items.length}
-            </p>
-          </CardFooter>
-        </Card>
-      </div>
+    <div className="flex flex-col min-h-screen bg-gray-100">
+      <main className="flex-grow py-8">
+        <div className="container mx-auto">
+          <Card className="w-full max-w-md mx-auto">
+            <CardHeader>
+              <CardTitle>My Application</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex space-x-2 mb-4">
+                <Input
+                  type="text"
+                  placeholder="Enter an item"
+                  value={inputValue}
+                  onChange={handleInputChange}
+                />
+                <Button onClick={handleAddItem}>Add</Button>
+              </div>
+              <ul className="space-y-2">
+                {items.map((item, index) => (
+                  <li key={index} className="bg-white p-2 rounded shadow">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <p className="text-sm text-gray-500">
+                Total items: {items.length}
+              </p>
+            </CardFooter>
+          </Card>
+        </div>
+      </main>
+
+      <footer className="bg-gray-200 py-4">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center">
+            <p className="text-sm text-gray-600">© 2023 My Application. All rights reserved.</p>
+            <nav>
+              <ul className="flex space-x-4">
+                <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900">Privacy Policy</a></li>
+                <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900">Terms of Service</a></li>
+                <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
