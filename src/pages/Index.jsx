@@ -18,6 +18,12 @@ const App = () => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleAddItem();
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       <main className="flex-grow py-8">
@@ -33,6 +39,7 @@ const App = () => {
                   placeholder="Enter an item"
                   value={inputValue}
                   onChange={handleInputChange}
+                  onKeyPress={handleKeyPress}
                 />
                 <Button onClick={handleAddItem}>Add</Button>
               </div>
